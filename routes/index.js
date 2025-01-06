@@ -6,4 +6,6 @@ routes.get('/marjorie', routeController.marjorieRoute);
 routes.get('/primrose', routeController.primroseRoute);
 routes.get('/gamu', routeController.gamuRoute);
 
+routes.use('/contacts', require('./contacts'))
+
 module.exports = routes;

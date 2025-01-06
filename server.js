@@ -1,15 +1,19 @@
 // express server
 const express = require('express');
-const { default: connect } = require('./db/connect');
 const app = express();
-const mongoConnect = require("./db/connect");
-
+const mongodb = require("./db/connect");
 
 const port = 3000;
  
-app.use("/", require("./routes/index"));
-app.listen(process.env.PORT || port, () => {
-  console.log('Web Server is listening at port ' + (process.env.PORT || 3000));
-});
+app.use("/", require("./routes"));
 
-mongoConnect();
+mongodb.initDb((err) => {
+  if(err) {
+    console.log(err);
+  }
+  else {
+    app.listen(process.env.PORT || port, () => {
+      console.log('Web Server is listening at port ' + (process.env.PORT || port));
+    });
+  };
+});
