@@ -42,7 +42,6 @@ GET cse341-purplecre.onrender.com/contacts/66fd3e0ac8809d867c7576b7
 ### Create Contact
 POST cse341-purplecre.onrender.com/contacts HTTP/1.1
 content-Type: application/json 
-
 {
 "firstName": "Christopher",
 "lastName": "Gatsi",
@@ -54,7 +53,6 @@ content-Type: application/json
 ### PUT Contact
 PUT  cse341-purplecre.onrender.com/contacts/66fd3e0ac8809d867c7576b7 HTTP/1.1
 Content-Type: application/json
-
 {
     "firstName": "Bright",
     "lastName": "Gatto",
